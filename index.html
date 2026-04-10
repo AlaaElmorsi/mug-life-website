@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mug Life Coffee</title>
 
     <!-- Google Fonts -->
@@ -15,6 +13,7 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav>
         <h2>Mug Life</h2>
         <div class="nav-links">
@@ -25,19 +24,22 @@
         </div>
     </nav>
 
+    <!-- HOME -->
     <section id="home" class="reveal">
         <div class="hero-overlay">
-            <h1>Welcome to Mug Life</h1>
-            <p>Start your day the right way.</p>
-            <a href="#order" class="hero-btn">Order Now</a>
+            <h1>Welcome to Mug Life ☕</h1>
+            <p>Start your day the right way ☕</p>
+            <a href="#order" class="hero-btn">☕ Order Now</a>
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="reveal">
         <h2>About Us</h2>
-        <p>Start strong. Stay cozy. Sip Mug Life.</p>
+        <p>Start strong. Stay cozy. Sip Mug Life ☕</p>
     </section>
 
+    <!-- MENU -->
     <section id="menu" class="reveal">
         <h2>Our Menu</h2>
 
@@ -45,52 +47,43 @@
             <button class="menu-arrow left">&#10094;</button>
 
             <div class="menu-container">
-
                 <div class="menu-item">
-                    <a href="./espresso.jpg" target="_blank">
-                        <img src="./espresso.jpg" alt="Espresso">
-                    </a>
-                    <h3>Espresso</h3>
+                    <img src="espresso.jpg" alt="Espresso">
+                    <h3>☕ Espresso</h3>
                     <p>Strong and bold coffee shot.</p>
                     <span class="price">$4.50</span>
                 </div>
 
                 <div class="menu-item">
-                    <a href="./latte.jpg" target="_blank">
-                        <img src="./latte.jpg" alt="Latte">
-                    </a>
-                    <h3>Latte</h3>
+                    <img src="latte.jpg" alt="Latte">
+                    <h3>🥛 Latte</h3>
                     <p>Smooth blend of coffee and milk.</p>
                     <span class="price">$5.50</span>
                 </div>
 
                 <div class="menu-item">
-                    <a href="./mocha.jpg" target="_blank">
-                        <img src="./mocha.jpg" alt="Mocha">
-                    </a>
-                    <h3>Mocha</h3>
+                    <img src="mocha.jpg" alt="Mocha">
+                    <h3>🍫 Mocha</h3>
                     <p>Chocolate flavored coffee delight.</p>
                     <span class="price">$5.75</span>
                 </div>
 
                 <div class="menu-item">
-                    <a href="./iced-coffee.jpg" target="_blank">
-                        <img src="./iced-coffee.jpg" alt="Iced Coffee">
-                    </a>
-                    <h3>Iced Coffee</h3>
+                    <img src="iced-coffee.jpg" alt="Iced Coffee">
+                    <h3>🧊 Iced Coffee</h3>
                     <p>Chilled coffee for a refreshing taste.</p>
                     <span class="price">$5.00</span>
                 </div>
-
             </div>
 
             <button class="menu-arrow right">&#10095;</button>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="reveal">
         <h2>Contact Us</h2>
-        <p>Have a question or want to place an order? Send us a message.</p>
+        <p>Have a question or want to place an order? Send us a message ☕</p>
 
         <form class="contact-form" id="contactForm">
             <input type="text" placeholder="Your Name" required>
@@ -102,16 +95,21 @@
         <p id="form-message" class="form-message"></p>
     </section>
 
+    <!-- ORDER -->
     <section class="order-section reveal" id="order">
         <h2>Ready for your coffee?</h2>
+        <p>Your next favorite cup is waiting.</p>
     </section>
 
-    <a href="#order" class="floating-order-btn">Order Now</a>
+    <!-- FLOATING BUTTON -->
+    <a href="#order" class="floating-order-btn">☕ Order Now</a>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Mug Life Coffee. All rights reserved.</p>
     </footer>
 
+    <!-- SCROLL REVEAL -->
     <script>
         function revealOnScroll() {
             const reveals = document.querySelectorAll(".reveal");
@@ -119,8 +117,9 @@
             reveals.forEach((el) => {
                 const windowHeight = window.innerHeight;
                 const elementTop = el.getBoundingClientRect().top;
+                const visiblePoint = 100;
 
-                if (elementTop < windowHeight - 100) {
+                if (elementTop < windowHeight - visiblePoint) {
                     el.classList.add("active");
                 }
             });
@@ -130,6 +129,7 @@
         window.addEventListener("load", revealOnScroll);
     </script>
 
+    <!-- CAROUSEL ARROWS -->
     <script>
         const container = document.querySelector(".menu-container");
         const leftBtn = document.querySelector(".menu-arrow.left");
@@ -144,14 +144,17 @@
         });
     </script>
 
+    <!-- CONTACT FORM MESSAGE -->
     <script>
         const contactForm = document.getElementById("contactForm");
         const formMessage = document.getElementById("form-message");
 
         contactForm.addEventListener("submit", function(event) {
             event.preventDefault();
+
             formMessage.textContent = "Thank you! Your message has been sent successfully.";
             formMessage.style.display = "inline-block";
+
             contactForm.reset();
         });
     </script>
